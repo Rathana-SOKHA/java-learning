@@ -1,9 +1,9 @@
 // What this Java for beginners course cover
 
 // 1. How the Java compiler work
-// 2. Data types & Variable
-// 3. Arithmetic operators & Expression
-// 4. Input & Output
+// 2. Data types & Variable (lession1)
+// 3. Arithmetic operators & Expression (lession1)
+// 4. Input & Output (lession2)
 // 5. Making decistion - if statements
 // 6. Performing repeatition - loops while for
 // 7. Method - Function
