@@ -7,7 +7,10 @@ public class Main {
         // LoginValidation userLogin = new LoginValidation();
         // userLogin.loginForm();
 
-        StudentGradingSystem student = new StudentGradingSystem();
-        student.studentGrading();
+        // StudentGradingSystem student = new StudentGradingSystem();
+        // student.studentGrading();
+
+        AccountAccess account = new AccountAccess();
+        account.accountAccess();
     }
 }
