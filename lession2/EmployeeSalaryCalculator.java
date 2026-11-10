@@ -1,5 +1,4 @@
 package lession2;
-import java.text.ListFormat.Style;
 import java.util.Scanner;
 
 public class EmployeeSalaryCalculator {
