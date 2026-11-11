@@ -6,7 +6,7 @@
 // 4. Input & Output (lession2)
 // 5. Making decistion - if statements (lession3)
 // 6. Performing repeatition - loops while for
-// 7. Method - Function
+// 7. Method - Function (A method is a block of code that performs a specific task.)
 // 8. OOP - Object-Oriented Programming
 // 9. Data structuers - Array & Array List
 // 10. Text file processing
