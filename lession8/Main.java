@@ -2,29 +2,50 @@ package lession8;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Lesson 8: Object-Oriented Programming (OOP)");
+        Car myCar = new Car("Toyota", "Corolla", 2022);
+        Car yourCar = new Car("Honda", "Civic", 2024);
 
-        Student student1 = new Student();
-        student1.name = "Rathana";
-        student1.age = 21;
+        System.out.println("Car 1: " + myCar.getInfo());
+        System.out.println("Car 2: " + yourCar.getInfo());
 
-        Student student2 = new Student();
-        student2.name = "Sokha";
-        student2.age = 18;
+        myCar.start();
+        myCar.accelerate(60);
+        myCar.stop();
 
-        System.out.println("Student 1: " + student1.name + ", Age: " + student1.age);
-        System.out.println("Student 2: " + student2.name + ", Age: " + student2.age);
-
-        student1.introduce();
-        student2.introduce();
+        yourCar.start();
+        yourCar.accelerate(80);
+        yourCar.stop();
     }
 }
 
-class Student {
-    String name;
-    int age;
+class Car {
+    String brand;
+    String model;
+    int year;
+    int speed;
 
-    void introduce() {
-        System.out.println("Hi, my name is " + name + " and I am " + age + " years old.");
+    Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.speed = 0;
+    }
+
+    void start() {
+        System.out.println(brand + " " + model + " started.");
+    }
+
+    void accelerate(int speedIncrease) {
+        speed += speedIncrease;
+        System.out.println(brand + " " + model + " is now moving at " + speed + " km/h.");
+    }
+
+    void stop() {
+        speed = 0;
+        System.out.println(brand + " " + model + " stopped.");
+    }
+
+    String getInfo() {
+        return year + " " + brand + " " + model;
     }
 }
