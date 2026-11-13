@@ -2,39 +2,35 @@ package lession7;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to Lesson 7 - Methods");
+        int[] scores = {78, 85, 92, 64, 89};
 
-        sayHello();
+        System.out.println("Student Score Report");
+        System.out.println("Average score: " + calculateAverage(scores));
 
-        int result = addNumbers(15, 25);
-        System.out.println("Sum: " + result);
-
-        double total = calculatePriceWithTax(500, 10);
-        System.out.println("Total with tax: " + total);
-
-        int age = 21;
-        String message = checkAge(age);
-        System.out.println(message);
+        for (int i = 0; i < scores.length; i++) {
+            System.out.println("Student " + (i + 1) + " -> " + scores[i] + " = " + getGrade(scores[i]));
+        }
     }
 
-    static void sayHello() {
-        System.out.println("Hello, Java learner!");
+    static double calculateAverage(int[] numbers) {
+        int total = 0;
+        for (int number : numbers) {
+            total += number;
+        }
+        return (double) total / numbers.length;
     }
 
-    static int addNumbers(int a, int b) {
-        return a + b;
-    }
-
-    static double calculatePriceWithTax(double price, double taxPercent) {
-        double tax = price * taxPercent / 100;
-        return price + tax;
-    }
-
-    static String checkAge(int age) {
-        if (age >= 18) {
-            return "You are an adult.";
+    static char getGrade(int score) {
+        if (score >= 90) {
+            return 'A';
+        } else if (score >= 80) {
+            return 'B';
+        } else if (score >= 70) {
+            return 'C';
+        } else if (score >= 60) {
+            return 'D';
         } else {
-            return "You are a minor.";
+            return 'F';
         }
     }
 }
