@@ -13,6 +13,10 @@ public class Main {
     }
 
     static double calculateAverage(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return 0.0;
+        }
+
         int total = 0;
         for (int number : numbers) {
             total += number;
@@ -21,7 +25,9 @@ public class Main {
     }
 
     static char getGrade(int score) {
-        if (score >= 90) {
+        if (score < 0) {
+            return 'F';
+        } else if (score >= 90) {
             return 'A';
         } else if (score >= 80) {
             return 'B';
