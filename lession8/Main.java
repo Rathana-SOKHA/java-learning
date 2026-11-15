@@ -10,10 +10,12 @@ public class Main {
 
         myCar.start();
         myCar.accelerate(60);
+        myCar.brake(20);
         myCar.stop();
 
         yourCar.start();
         yourCar.accelerate(80);
+        yourCar.brake(30);
         yourCar.stop();
     }
 }
@@ -43,6 +45,16 @@ class Car {
 
         speed += speedIncrease;
         System.out.println(brand + " " + model + " is now moving at " + speed + " km/h.");
+    }
+
+    void brake(int speedDecrease) {
+        if (speedDecrease < 0) {
+            System.out.println("Speed decrease cannot be negative.");
+            return;
+        }
+
+        speed = Math.max(0, speed - speedDecrease);
+        System.out.println(brand + " " + model + " slowed down to " + speed + " km/h.");
     }
 
     void stop() {
