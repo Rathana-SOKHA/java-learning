@@ -10,6 +10,9 @@ public class Main {
         for (int i = 0; i < scores.length; i++) {
             System.out.println("Student " + (i + 1) + " -> " + scores[i] + " = " + getGrade(scores[i]));
         }
+
+        System.out.println("Highest score: " + getHighestScore(scores));
+        System.out.println("Lowest score: " + getLowestScore(scores));
     }
 
     static double calculateAverage(int[] numbers) {
@@ -38,5 +41,33 @@ public class Main {
         } else {
             return 'F';
         }
+    }
+
+    static int getHighestScore(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return 0;
+        }
+
+        int highest = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > highest) {
+                highest = numbers[i];
+            }
+        }
+        return highest;
+    }
+
+    static int getLowestScore(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return 0;
+        }
+
+        int lowest = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] < lowest) {
+                lowest = numbers[i];
+            }
+        }
+        return lowest;
     }
 }
