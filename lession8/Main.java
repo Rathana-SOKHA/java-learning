@@ -19,10 +19,10 @@ public class Main {
 }
 
 class Car {
-    String brand;
-    String model;
-    int year;
-    int speed;
+    private String brand;
+    private String model;
+    private int year;
+    private int speed;
 
     Car(String brand, String model, int year) {
         this.brand = brand;
@@ -36,6 +36,11 @@ class Car {
     }
 
     void accelerate(int speedIncrease) {
+        if (speedIncrease < 0) {
+            System.out.println("Speed increase cannot be negative.");
+            return;
+        }
+
         speed += speedIncrease;
         System.out.println(brand + " " + model + " is now moving at " + speed + " km/h.");
     }
