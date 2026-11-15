@@ -27,5 +27,8 @@ public class Main {
 
         names.add(1, "Sophia");
         System.out.println("After inserting Sophia at index 1: " + names);
+
+        names.set(0, "David");
+        System.out.println("After replacing index 0 with David: " + names);
     }
 }
