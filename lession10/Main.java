@@ -23,5 +23,9 @@ public class Main {
         String fullName = "Rathana Sokha";
         System.out.println("Contains Sokha: " + fullName.contains("Sokha"));
         System.out.println("Trimmed: [" + "  Hello Java  ".trim() + "]");
+
+        String email = "student@gmail.com";
+        System.out.println("Has @ symbol: " + email.contains("@"));
+        System.out.println("Domain: " + email.substring(email.indexOf('@') + 1));
     }
 }
