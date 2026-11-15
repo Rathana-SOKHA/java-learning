@@ -1,10 +1,11 @@
 package lession9;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Lesson 9: Arrays & ArrayList");
 
-        // Array example
         String[] students = {"Rathana", "Sokha", "Mali", "Dara"};
         System.out.println("First student: " + students[0]);
         System.out.println("Array size: " + students.length);
@@ -13,8 +14,7 @@ public class Main {
             System.out.println("Student: " + student);
         }
 
-        // ArrayList example
-        java.util.ArrayList<String> names = new java.util.ArrayList<>();
+        ArrayList<String> names = new ArrayList<>();
         names.add("John");
         names.add("Mary");
         names.add("Alex");
@@ -24,5 +24,8 @@ public class Main {
 
         names.remove("Mary");
         System.out.println("After removing Mary: " + names);
+
+        names.add(1, "Sophia");
+        System.out.println("After inserting Sophia at index 1: " + names);
     }
 }
