@@ -2,63 +2,64 @@ package lession11;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Lesson 11: Object-Oriented Programming");
+        System.out.println("Lesson 11: OOP - Bank Account Example");
 
-        Student student1 = new Student("Rathana", 18, 93);
-        Student student2 = new Student("Sokha", 20, 88);
+        BankAccount account1 = new BankAccount("A001", "Rathana", 500.0);
+        BankAccount account2 = new BankAccount("A002", "Sokha", 1000.0);
 
-        System.out.println(student1.getInfo());
-        System.out.println(student2.getInfo());
+        System.out.println(account1.getAccountInfo());
+        System.out.println(account2.getAccountInfo());
 
-        student1.study();
-        student1.takeExam(97);
-        student1.displayResult();
+        account1.deposit(250.0);
+        account1.withdraw(100.0);
+        account1.showBalance();
 
-        student2.study();
-        student2.takeExam(82);
-        student2.displayResult();
+        account2.deposit(300.0);
+        account2.withdraw(1500.0);
+        account2.showBalance();
     }
 }
 
-class Student {
-    private String name;
-    private int age;
-    private int score;
+class BankAccount {
+    private String accountId;
+    private String ownerName;
+    private double balance;
 
-    public Student(String name, int age, int score) {
-        this.name = name;
-        this.age = age;
-        this.score = score;
+    public BankAccount(String accountId, String ownerName, double balance) {
+        this.accountId = accountId;
+        this.ownerName = ownerName;
+        this.balance = balance;
     }
 
-    public void study() {
-        System.out.println(name + " is studying Java.");
-    }
-
-    public void takeExam(int newScore) {
-        score = newScore;
-        System.out.println(name + " scored " + score + " in the exam.");
-    }
-
-    public String getInfo() {
-        return "Student: " + name + ", Age: " + age + ", Score: " + score;
-    }
-
-    public void displayResult() {
-        String grade;
-
-        if (score >= 90) {
-            grade = "A";
-        } else if (score >= 80) {
-            grade = "B";
-        } else if (score >= 70) {
-            grade = "C";
-        } else if (score >= 60) {
-            grade = "D";
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit: $" + amount + " successfully.");
         } else {
-            grade = "F";
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Withdrawal amount must be positive.");
+            return;
         }
 
-        System.out.println(name + " got grade " + grade + ".");
+        if (amount > balance) {
+            System.out.println("Insufficient balance. Cannot withdraw $" + amount);
+            return;
+        }
+
+        balance -= amount;
+        System.out.println("Withdraw: $" + amount + " successfully.");
+    }
+
+    public void showBalance() {
+        System.out.println(ownerName + " balance: $" + balance);
+    }
+
+    public String getAccountInfo() {
+        return "Account ID: " + accountId + ", Owner: " + ownerName + ", Balance: $" + balance;
     }
 }
